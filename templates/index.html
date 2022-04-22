@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <title>Photo App</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="https://kit.fontawesome.com/710f1c73b0.js" crossorigin="anonymous"></script>  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% include 'includes/navbar.html' %}
+    <section>
+        <div class="Left">
+            {% include 'includes/stories.html' %}
+            {% include 'includes/cards.html' %}
+        </div>
+        {% include 'includes/suggestions.html' %}
+    </section>
+</body>
+</html>
+
+<!--How to alt text:
+I would create a small icon on the right bottom of an image
+that takes the user to another page where they can edit alt text-->
