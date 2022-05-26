@@ -267,9 +267,9 @@ const post2Modal = post => {
             <div class="modal">
                 <img class="modalImage" src="${post.image_url}" />
 
-                <div class="modal-left">
-                    <div class="modal-user">
-                        <img src="${post.user.thumb_url}" class="modal-user-pic" alt="Profile picture for ${post.user.username}"/>
+                <div class="modalRight">
+                    <div class="modalUser">
+                        <img src="${post.user.thumb_url}" class="modalUserPic" alt="Profile picture for ${post.user.username}"/>
                         <h2>${post.user.username}</h2>
                     </div>
                     <div class = "modelComments"> 
