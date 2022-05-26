@@ -431,36 +431,36 @@ aside header .pic {
     width: 100%;
 }
 
-.modal-left {
+
+.modalRight {
     width: 100%;
     background-color: #ececec;
     padding: 5px;
     overflow: scroll;
 }
 
-.modal-user {
+.modalUser {
     display: grid;
     grid-template-columns: 50px auto;
     padding-top: 3%;
     padding-left: 3%;
     padding-bottom: 3%;
     border-bottom: 1px solid #bbb;
-
     justify-content: left;
     align-items: center;
 }
 
-.modal-user-pic {
+.modalUser h2 {
+    margin: 3%;
+    padding: 3%;
+
+}
+
+.modalUserPic {
     border-radius: 50%;
     width: 50px;
     margin: 5%;
     padding: 5%;
-}
-
-.modal-user h2 {
-    margin: 3%;
-    padding: 3%;
-
 }
 
 .modalComments {
