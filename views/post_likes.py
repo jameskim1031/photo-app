@@ -61,7 +61,7 @@ class PostLikesDetailEndpoint(Resource):
         except:
             return Response(json.dumps({"message":"'id' is not an int."}), mimetype="application/json",  status=400)
 
-        if id >= len(LikePost.query.all()):
+        if not LikePost.query.get(id):
             return Response(json.dumps({"message":"'id' does not exist."}), mimetype="application/json",  status=404) 
         
         # gets ids of all the following + self

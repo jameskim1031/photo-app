@@ -65,7 +65,7 @@ class BookmarkDetailEndpoint(Resource):
         except:
             return Response(json.dumps({"message":"'id' is not an int."}), mimetype="application/json",  status=400)
 
-        if id >= len(Bookmark.query.all()):
+        if not Bookmark.query.get(id):
             return Response(json.dumps({"message":"'id' does not exist."}), mimetype="application/json",  status=404) 
         
         # gets ids of all the following + self

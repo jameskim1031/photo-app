@@ -26,7 +26,7 @@ class FollowingListEndpoint(Resource):
             return Response(json.dumps({"message":"'user_id' is not an int."}), mimetype="application/json",  status=400)      
 
         #check invalid user_id
-        if new_following >= len(User.query.all()):
+        if not User.query.get(new_following):
             return Response(json.dumps({"message":"'user_id' does not exist."}), mimetype="application/json",  status=404) 
 
         # check duplicates
@@ -57,7 +57,7 @@ class FollowingDetailEndpoint(Resource):
             return Response(json.dumps({"message":"'id' is not an int."}), mimetype="application/json",  status=400)
         
         #check invalid id
-        if id >= len(Following.query.all()):
+        if not Following.query.get(id):
             return Response(json.dumps({"message":"'id' does not exist."}), mimetype="application/json",  status=404) 
 
         #check unauthorized id

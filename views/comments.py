@@ -30,7 +30,7 @@ class CommentListEndpoint(Resource):
             return Response(json.dumps({"message":"'post_id' is not reachable."}), mimetype="application/json",  status=404) 
         
         if not body.get('text'):
-            return Response(json.dumps({"message":"'post_id' is not an int."}), mimetype="application/json",  status=400) 
+            return Response(json.dumps({"message":"empty text"}), mimetype="application/json",  status=400) 
 
         new_comment = Comment(
             post_id=body.get('post_id'),

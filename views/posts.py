@@ -23,7 +23,10 @@ class PostListEndpoint(Resource):
             limit = 10
         user_ids = get_authorized_user_ids(self.current_user)
         posts = Post.query.filter(Post.user_id.in_(user_ids)).limit(limit).all()
-        return Response(json.dumps([post.to_dict() for post in posts]), mimetype="application/json", status=200)
+
+        data = [post.to_dict(user=self.current_user) for post in posts]
+        return Response(json.dumps(data), mimetype="application/json", status=200)
+        
 
     def post(self):
         body = request.get_json()
@@ -44,6 +47,7 @@ class PostListEndpoint(Resource):
         #insert whatever was posted into the database (and also let's do some validation):
         return Response(json.dumps(new_post.to_dict()), mimetype="application/json", 
         status=201)
+        
         
 class PostDetailEndpoint(Resource):
 
@@ -111,7 +115,8 @@ class PostDetailEndpoint(Resource):
         if post.user_id not in user_ids:
             return Response(json.dumps({"message":"id={0} is invalid".format(id)}), mimetype="application/json", status=404)
 
-        return Response(json.dumps(post.to_dict()), mimetype="application/json", status=200)
+        
+        return Response(json.dumps(post.to_dict(user=self.current_user)), mimetype="application/json", status=200)
 
 def initialize_routes(api):
     api.add_resource(

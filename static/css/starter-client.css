@@ -1,0 +1,541 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* background-color: #fafafa; */
+    background-color: #f2f2f2;
+}
+
+aside, main, nav {
+    padding: 10px;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Comfortaa', cursive;
+}
+a, a:visited, a:hover, a:link  {
+    /* font-weight: 600; */
+    /* text-decoration: none; */
+    color: rgb(44, 105, 155);
+}
+a:hover {
+    color: #777;
+}
+button.link, .viewAllComments {
+    color: rgb(44, 105, 155);
+    background-color: transparent;
+    border-width: 0px;
+}
+button.link:hover, .viewAllComments:hover {
+    color: #777;
+}
+
+button.link.following {
+    padding: 5px 10px !important;
+}
+button.link.following.active {
+    background-color: white;
+    padding: 5px 10px !important;
+    border: solid 1px #CCC;
+    border-radius: 4px;
+}
+header {
+    margin-top: 20px;
+}
+
+.User {
+    display:flex;
+    flex-direction: row;
+ }
+ 
+ .User > img{
+     height: 70px;
+     width: 70px;
+     border-radius: 50%;
+     margin:5px;
+ }
+ 
+ .User > h1 {
+     font-size: 30px;
+     font-family: Comfortaa;
+     margin-left: 10px;
+ }
+
+nav {
+    position: sticky;
+    height: 70px;
+    width: 100vw;
+    background-color: white;
+    border-bottom: solid #dbdbdb 1px;
+    left: 0px;
+    top: 0px;
+    padding: 0px 3vw;
+}
+
+nav, nav ul, .card .header,.card .add-comment {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style-type: none;
+}
+li {
+    margin-left: 30px;
+}
+
+aside {
+    position: fixed;
+    right: 0px;
+    top: 70px;
+    width: calc(40vw - 6px);
+    /* background-color: #fafafa; */
+    background-color: #f2f2f2;
+    height: calc(100vh - 100px);
+    padding-left: 30px;
+}
+main {
+    /* margin-top: 70px; */
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#posts {
+    width: 50vw;
+}
+
+.stories {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 50vw;
+    min-width: 540px;
+    border: solid 1px #dbdbdb;
+    margin-bottom: 30px;
+    background-color: #fff;
+    overflow: hidden;
+}
+.stories > div {
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.stories > div .pic {
+    min-width: 50px;
+    min-height: 50px;
+    border: solid 3px #dbdbdb;
+    border-radius: 27px;
+}
+.stories p {
+    margin-top: 4px;
+    margin-bottom: 0px;
+    font-size: 0.80em;
+    color: #999;
+    width: 66px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.Top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin:5px;
+}
+
+.Top > h1 {
+    margin:5px;
+    font-family: Comfortaa;
+}
+
+.card {
+    margin-top:25px;
+    width:100%;
+    background-color: white;
+}
+
+.card .caption, .card .comments, .likes {
+    padding: 0 5px;
+}
+
+.card .info {
+    padding:10px;
+}
+
+.card .link, .viewAllComments {
+    margin: 0;
+    padding: 10px 0;
+    font-size: .9em!important;
+    color: #2c699b;
+    background-color: transparent;
+    border-width: 0;
+}
+
+.postImage{
+    width:100%;
+    height: auto;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.buttons button{
+    background-color: transparent;
+    border: 0px;
+}
+
+.bookmark{
+    font-size:1em;
+}
+
+.card .buttons {
+    font-size:1.3em;
+}
+
+.fas.fa-heart{
+    color:red;
+}
+
+.card .timestamp {
+    color: #999;
+    text-transform: uppercase;
+    font-size: .7em;
+}
+
+.card .add-comment{
+    border-top: 1px solid #dbdbdb;
+    padding: 10px 15px;
+}
+
+.comment-textbox{
+    border-width: 0;
+    outline: none;
+    font-size: .95em;
+    width: 85%;
+    padding: 10px 0;
+}
+
+button{
+    font-size: 1em;
+}
+
+
+.Middle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Options {
+    margin:3px;
+}
+
+.Options > i {
+    margin: 3px;
+}
+
+
+.Middle button{
+    width:20px;
+    height:20px;
+    margin:3px;
+}
+
+.Bookmark {
+    margin-right:5px;
+}
+
+.Likes {
+    margin:5px;
+    display: flex;
+    flex-direction: row;
+    padding-left:5px;
+}
+
+.Likes > h1 {
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin:0px;
+}
+
+
+.suggestion-text {
+    color: #666;
+    font-weight: 600;
+    letter-spacing: 0px;
+}
+
+
+.Profiles {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:10px;
+    margin:5px;
+}
+
+.Profiles > img {
+    height:50px;
+    width: 50px;
+    border-radius:50%;
+}
+
+.Profiles button {
+    padding: 5px 10px;
+    border: 1px;
+    border-color:#999;
+    border-radius:4px;
+}
+
+.follow {
+    background: transparent;
+}
+
+.unfollow {
+    background: white;
+}
+
+.Name {
+    width:100%;
+}
+
+.Name > h1 {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin:0px;
+}
+
+.Name > h2 {
+    font-size:12px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #999999;
+    margin:0px;
+}
+
+.Name > h3 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.suggestions section {
+    display: grid;
+    grid-template-columns: 35px 2fr 1fr;
+    align-items: center;
+    width: 25vw;
+}
+.suggestions section > div {
+    padding: 8px;
+    width: 200px;
+}
+.suggestions section p, .suggestions section a {
+    margin: 0px;
+}
+.suggestions section p {
+    color: #333;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.suggestions section a {
+    font-size: 0.8em;
+}
+.suggestions section p:nth-child(2) {
+    color: #666;
+    font-size: 0.8em;
+    font-weight: 400;
+}
+.suggestions section .pic {
+    min-width: 30px;
+    min-height: 30px;
+    border: solid 1px #dbdbdb;
+    border-radius: 15px;
+}
+
+.followButton{
+    background-color:transparent;
+    padding: 0px;
+    width:70px;
+    border:0px;
+}
+
+.followButton h3{
+    display: block; 
+   text-align: center; 
+}
+
+aside header {
+    display: flex;
+    align-items: center;
+    width: 25vw;
+}
+
+aside header .pic {
+    min-width: 60px;
+    min-height: 60px;
+    border-radius: 33px;
+    border-width: 0px;
+    margin-right: 20px;
+}
+.visuallyhidden {
+    display: none;
+}
+
+
+/********************************************/
+.modal-bg {
+    background: rgba(50, 50, 50, 0.8);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    width: 77vw;
+    height: 80vw;
+    max-height: 80vh;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.modal-bg button {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+}
+
+.modalImage{
+    opacity: 1;
+    width: 100%;
+}
+
+.modal-left {
+    width: 100%;
+    background-color: #ececec;
+    padding: 5px;
+    overflow: scroll;
+}
+
+.modal-user {
+    display: grid;
+    grid-template-columns: 50px auto;
+    padding-top: 3%;
+    padding-left: 3%;
+    padding-bottom: 3%;
+    border-bottom: 1px solid #bbb;
+
+    justify-content: left;
+    align-items: center;
+}
+
+.modal-user-pic {
+    border-radius: 50%;
+    width: 50px;
+    margin: 5%;
+    padding: 5%;
+}
+
+.modal-user h2 {
+    margin: 3%;
+    padding: 3%;
+
+}
+
+.modalComments {
+    overflow: scroll;
+}
+    
+    
+.modalComment {
+    display: grid;
+    grid-template-columns: 20% 70% 10%;
+    justify-content: left;
+    align-items: start;
+}
+
+.modalUserImage {
+    padding-top:20px;
+}
+
+.modalHeartImage {
+    padding-top:20px;
+}
+    
+.modalComment img{
+    border-radius: 50%;
+    width: 40px;
+}
+
+.commentContent{
+    line-height: 20px;
+    padding-top:0px;
+}
+
+
+.close {
+    align-self: flex-end;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.modal-body {
+    overflow-y: auto;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    align-content: flex-start;
+    padding: 10px;
+    align-items: center;
+    border-bottom: solid 1px #CCC;
+}
+
+/*******************************************/
+
+
+@media (max-width: 900px) {
+    aside {
+        display: none;
+    }
+    main {
+        width: 100vw;
+        padding: 0px;
+        align-items: center;
+    }
+    .card, .stories {
+        width: 75vw;
+        min-width: auto;
+    }
+}
+
+@media (max-width: 700px) {
+    .card, .stories {
+        width: 90vw;
+    }
+}
